@@ -1,17 +1,17 @@
-apiversiom: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name : worker-deployment
-  specs
+  name: worker-deployment
+spec:
   replicas: 3
   selector:
-    matchlable :
-    componet : worker
-  template:
-    metadata :
-      labels:
+    matchLabels:
       component: worker
+  template:
+    metadata:
+      labels:
+        component: worker
     spec:
-    containers: 
-      -name: worker
-      image: stephengrider/multi-worker
+      containers:
+        - name: worker
+          image: stephengrider/multi-worker
