@@ -3,4 +3,14 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: web   # This is the label that the pods will have for front end
+  template:
+    metadata:
+      labels:
+        component: web   # This is the label that the pods will have for front end
+    spec:
+      
+
