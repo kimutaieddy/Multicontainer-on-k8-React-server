@@ -1,2 +1,15 @@
 apiversiom: apps/v1
 kind: Deployment
+metadata:
+  name : worker-deployment
+  specs
+  replicas: 3
+  selector:
+    matchlable :
+    componet : worker
+  template:
+    metadata :
+      labels:
+      component: worker
+    spec:
+    containers: stephengrider/multi-worker
