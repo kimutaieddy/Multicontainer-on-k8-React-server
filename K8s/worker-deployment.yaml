@@ -12,4 +12,6 @@ metadata:
       labels:
       component: worker
     spec:
-    containers: stephengrider/multi-worker
+    containers: 
+      -name: worker
+      image: stephengrider/multi-worker
