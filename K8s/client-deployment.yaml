@@ -1,0 +1,6 @@
+appVersion: app/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas:
