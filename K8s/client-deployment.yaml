@@ -12,5 +12,10 @@ spec:
       labels:
         component: web   # This is the label that the pods will have for front end
     spec:
+    containers:
+    - name: client
+      image: stephengrider/multi-client
+      ports:
+      - containerPort: 3000
       
 
