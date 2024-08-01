@@ -5,9 +5,10 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: Redis
-     labels:
-       component: Redis
+    matchLabels:
+      component: redis
+    labels:
+       component: redis
     spec:
       containers:
         - name: redis
