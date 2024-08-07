@@ -1,12 +1,11 @@
 apiVersion: apps
 kind: service
 metadata:
-name: postgres-cluster-ip
-labels:
-  app: postgres
+  name: postgres-cluster-ip-service
 spec:
-type: ClusterIP
-ports:
-  - port: 5432
-selector:
-  app: postgres
+  type: ClusterIP
+  selector:
+    component: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
