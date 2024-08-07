@@ -11,3 +11,9 @@ spec:
    metadata:
      labels:
        component: postgres
+  spec:
+      containers:
+        - name: postgres
+          image: postgres
+          ports:
+            - containerPort: 5432
