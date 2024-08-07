@@ -1,5 +1,5 @@
-apiVersion: apps
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: postgres-cluster-ip-service
 spec:
