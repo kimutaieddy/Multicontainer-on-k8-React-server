@@ -7,3 +7,7 @@ spec:
   selector:
     matchLabels:
       component: postgres
+  template:
+   metadata:
+     labels:
+       component: postgres
