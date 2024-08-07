@@ -1,11 +1,19 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: postgres-cluster-ip-service
+  name: postgres-deployment
 spec:
-  type: ClusterIP
+  replicas: 1
   selector:
-    component: postgres
-  ports:
-    - port: 5432
-      targetPort: 5432
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
