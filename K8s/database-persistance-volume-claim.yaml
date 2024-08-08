@@ -3,3 +3,8 @@ kind: persitance
 metadata: 
   name: database-persistance-volume-claim
 specs:
+  accessModes:
+    -Readwriteonce:
+    resources:
+      requests:
+      storage: 2gi
