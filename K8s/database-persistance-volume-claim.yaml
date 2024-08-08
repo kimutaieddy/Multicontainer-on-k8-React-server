@@ -1,10 +1,10 @@
 apiVersion: v1
-kind: persitance
+kind: PersistenceVolumeClaim
 metadata: 
-  name: database-persistance-volume-claim
-specs:
+  name: database-persistence-volume-claim
+spec:
   accessModes:
-    -Readwriteonce:
-    resources:
-      requests:
-      storage: 2gi
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
