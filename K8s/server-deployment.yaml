@@ -17,3 +17,6 @@ spec:  # This should be at the same level as metadata
           image: stephengrider/multi-server
           ports:
             - containerPort: 80  # Add the container port here
+          env:
+            -name: REDIS_HOST
+              value: redis-cluster-ip-service
