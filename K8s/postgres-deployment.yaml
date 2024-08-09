@@ -23,5 +23,5 @@ spec:
             - containerPort: 5432
           volumeMounts:
             -name: postgres-storage  # This is the name of the volume defined above
-            mouthPath:  /var/lib/postgresql/data
-            subPath: postgres
+            mouthPath:  /var/lib/postgresql/data # This is the path in the container where the volume will be mounted
+            subPath: postgres  # This is the subpath in the volume where the data will be stored
