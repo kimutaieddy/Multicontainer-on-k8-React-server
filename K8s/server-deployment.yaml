@@ -16,15 +16,21 @@ spec:  # This should be at the same level as metadata
         - name: server
           image: stephengrider/multi-server
           ports:
-            - containerPort: 80  # Add the container port here
+            - containerPort: 5000  # Add the container port here
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
-              value: 6379
+              value: '6379'
             - name: PGUSER
-              value: postgres
+              value: postgres 
             - name: PGHOST
               value: postgres-cluster-ip-service
+            - name: PGHOST
+              value: '5432'
             - name: PGDATABASE
               value: postgres
+              value From :
+              secretkeyRef:
+                name: pgpassword
+                key: PGPASSWORD
