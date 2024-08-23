@@ -9,4 +9,9 @@ spec:
   rules:
   - http:
       paths:
+      -path:
+      backend:
+        serviceName: client-cluster-ip-service
+        servicePort: 3000
+
 
