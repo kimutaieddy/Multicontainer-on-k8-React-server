@@ -15,19 +15,19 @@ spec:
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:
-            claimName: database-persistence-volume-claim
+            claimName: database-persistent-volume-claim
       containers:
         - name: postgres
           image: postgres
           ports:
             - containerPort: 5432
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
           env:
-            - name: PGPASSWORD
-              valueFrom: 
-                secretkeyRef:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
-          volumeMounts:
-            - name: postgres-storage  # Corrected spacing issue
-              mountPath: /var/lib/postgresql/data  # Corrected typo
-              subPath: postgres  # This is the subpath in the volume where the data will be stored
