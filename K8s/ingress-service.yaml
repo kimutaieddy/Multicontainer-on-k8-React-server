@@ -13,6 +13,7 @@ spec:
         paths:
           - path: /?(.*)
             # UPDATE THIS LINE ABOVE
+            pathType: ImplementationSpecific
             backend:
               serviceName: client-cluster-ip-service
               servicePort: 3000
