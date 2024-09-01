@@ -7,7 +7,5 @@ spec:
   selector:
     component: web
   ports:
-    - port: 3000    # This is the port that the service will listen on
-      targetPort: 3000   # This is the port that the service will forward traffic to
-
-# The service will listen on port 3000 and forward traffic to port 3000 on the pods that have the label component: web
+    - port: 3000
+      targetPort: 3000
